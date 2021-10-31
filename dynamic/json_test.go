@@ -365,7 +365,7 @@ func TestUnmarshalJSONValue(t *testing.T) {
 	dm2 := reflect.New(reflect.TypeOf(&testprotos.SimpleValue{}).Elem()).Interface().(proto.Message)
 	err = unmarshaler.Unmarshal(strings.NewReader(js), dm2)
 	testutil.Ok(t, err)
-	testutil.Eq(t, dm, dm2)
+	testutil.Eq(t, dm2, dm)
 }
 
 func TestJSONWellKnownType(t *testing.T) {
